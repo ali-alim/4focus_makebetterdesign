@@ -1,11 +1,12 @@
+import React from 'react'
 import {makeStyles} from './styles' 
 function App() {
-    const classes = makeStyles();
+    // const classes = makeStyles();
   return (
-    <div className={classes.appBar}>
+    <div>
       Hello, this is manually built App
     </div>
   )
 }
 
-export default App
+export default App;

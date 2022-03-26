@@ -1,0 +1,28 @@
+{
+  "name": "4focus",
+  "version": "1.0.0",
+  "description": "This app is for staying focus on your tasks and etc.\r It can be used as a social media app as well, you can choose the topic for yourself",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-alim/4focus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ali-alim/4focus/issues"
+  },
+  "homepage": "https://github.com/ali-alim/4focus#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.15"
+  }
+}

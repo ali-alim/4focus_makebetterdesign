@@ -1,7 +1,8 @@
-
+import {makeStyles} from './styles' 
 function App() {
+    const classes = makeStyles();
   return (
-    <div>
+    <div className={classes.appBar}>
       Hello, this is manually built App
     </div>
   )

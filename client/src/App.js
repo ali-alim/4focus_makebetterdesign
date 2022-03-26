@@ -1,11 +1,11 @@
 import React from 'react'
 import todo from "./images/todo.jpg"
-import {makeStyles} from './styles' 
+import useStyles from './styles' 
 import {Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"
 import Posts from './components/Posts/Posts'
 import Form from './components/Form/Form'
 function App() {
-    // const classes = makeStyles();
+    const classes = useStyles();
   return (
     <Container maxwidth="lg">
         <AppBar position='static' color='inherit'>

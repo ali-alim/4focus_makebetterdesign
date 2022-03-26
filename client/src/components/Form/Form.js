@@ -1,8 +1,8 @@
 import React from 'react'
-import {makeStyles} from "./styles"
+import useStyles from "./styles"
 
 function Form() {
-    const classes = makeStyles();
+    const classes = useStyles();
   return (
     <div>Form</div>
   )

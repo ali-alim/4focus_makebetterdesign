@@ -1,6 +1,6 @@
-import {makeStyles} from "./styles"
+import useStyles from "./styles"
 function Post() {
-    const classes = makeStyles();
+    const classes = useStyles();
   return (
     <div>Post</div>
   )

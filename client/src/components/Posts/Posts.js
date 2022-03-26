@@ -1,10 +1,13 @@
 import React from 'react'
-import {makeStyles} from "./styles"
+import Post from './Post/Post';
+import useeStyles from "./styles"
 function Posts() {
-    const classes = makeStyles();
+    const classes = useStyles();
   return (
     <div>
-      
+      <h1>POSTS</h1>
+      <Post />
+      <Post />
     </div>
   )
 }

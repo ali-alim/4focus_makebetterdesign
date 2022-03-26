@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
 app.use(cors());
 
 const PORT = process.env.PORT || 6000;
-const MONGO_URI =
-  "mongodb+srv://admin:mensarius@blog.zoyso.mongodb.net/focus?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI;
+  
 
 // const MONGO_URI = 'http://localhost'
 

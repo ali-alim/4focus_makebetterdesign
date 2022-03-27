@@ -10,16 +10,12 @@ const PORT = process.env.PORT || 7000;
 
 const app = express();
 
-app.use('/', postRoutes)
+app.use('/posts', postRoutes)
 
 app.use(bodyParser.json({ limit: "20mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
 app.use(cors());
 
-
-
-
-  
 
 
 mongoose

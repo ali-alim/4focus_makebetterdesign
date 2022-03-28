@@ -7,6 +7,7 @@ import Form from './components/Form/Form'
 import {useEffect} from "react"
 import { useDispatch } from 'react-redux'
 import {getPosts} from "./actions/posts"
+import "./index.css"
 
 function App() {
     const classes = useStyles();

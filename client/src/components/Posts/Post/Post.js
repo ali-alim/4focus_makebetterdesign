@@ -12,7 +12,7 @@ function Post({post}) {
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={post.selectedFile} title={post.title}>
         <div className={classes.overlay}>
-          <Typography variant="h6"> {post.creator} </Typography>
+          <Typography variant="h6"> {post.creator}</Typography>
           <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
         </div>
         <div className={classes.overlay}>
@@ -25,13 +25,17 @@ function Post({post}) {
             {post.tags.map((tag) => `#${tag} `)}
           </Typography>
         </div>
-        <div>
+
+        <Typography className={classes.title} variant="h5" gutterBottom>
+            Title
+              {/* {post.title} */}
+            </Typography>
+
           <CardContent>
-            <Typography className={classes.title} variant="h5" gutterBottom>
+            <Typography  variant="h5" gutterBottom>
               {post.message}
             </Typography>
           </CardContent>
-        </div>
         <CardActions className={classes.cardActions}>
           <Button size="small" color="primary" onClick={() => {}}>
             <ThumbUpAltIcon size="small" />

@@ -1,5 +1,5 @@
 import React from 'react'
-import todo from "./images/todo.jpg"
+import todo from "./images/todo.png"
 import useStyles from './styles' 
 import {Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"
 import Posts from './components/Posts/Posts'
@@ -18,7 +18,7 @@ function App() {
     return (
     <Container maxwidth="lg">
         <AppBar className={classes.appBar} position='static' color='inherit'>
-            <Typography className={classes.heading} variant="h2" align="center">To-Do Cards</Typography>
+            <Typography className={classes.heading} variant="h6" align="center">THIS APP HELPS YOU TO</Typography>
             <img className={classes.image} src={todo} alt="todo_cards" height="60" />
         </AppBar>
         <Grow in>

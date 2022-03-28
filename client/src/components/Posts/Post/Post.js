@@ -30,12 +30,12 @@ function Post({post}) {
         </div>
 
         <Typography className={classes.title} variant="h5" gutterBottom>
-            Title
-              {/* {post.title} */}
+            
+              {post.title}
             </Typography>
 
           <CardContent>
-            <Typography  variant="h5" gutterBottom>
+            <Typography  variant="body2" color="textSecondary" component="p" gutterBottom>
               {post.message}
             </Typography>
           </CardContent>

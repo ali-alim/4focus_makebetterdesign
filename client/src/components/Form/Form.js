@@ -74,7 +74,7 @@ function Form() {
         </div>
         <Button
           className={classes.buttonSubmit}
-          variant="container"
+          variant="contained"
           color="primary"
           size="large"
           type="submit"
@@ -85,8 +85,9 @@ function Form() {
         <Button
           variant="contained"
           color="secondary"
-          size="small"
+          size="large"
           onClick={clear}
+          fullWidth
         >
           Clear
         </Button>

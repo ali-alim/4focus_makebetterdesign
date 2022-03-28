@@ -16,7 +16,7 @@ function Form() {
     tags: "",
     selectedFile: "",
   });
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPost(postData))
   };

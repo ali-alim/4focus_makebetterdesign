@@ -1,15 +1,14 @@
 import {FETCH_ALL, CREATE, UPDATE, DELETE} from "../constants/actionTypes"
-import * as api from "../api"
+import * as api from "../api/index.js"
 
 //action creators 
 export const getPosts = () => async (dispatch) => {
     
     try{
         const {data} = await api.fetchPosts();
-        // const action = {type: 'FETCH_ALL', payload: []}
         dispatch({type:FETCH_ALL, payload:data});
     } catch(err) {
-        console.log(err.message)
+        console.log(err)
     }
 
 } 

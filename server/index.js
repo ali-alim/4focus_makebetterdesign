@@ -18,13 +18,19 @@ app.use(cors());
 
 app.use('/posts', postRoutes)
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() =>
-    app.listen(PORT, () =>
-      console.log(`Successfully connected to port: ${PORT}`)
-    )
-  )
-  .catch((err) => console.log(err.message));
+const connectDB = async () => {
+  try{
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`Successufully connected to: ${conn.connection.host}`)
+  } catch(err) {
+    console.log(err);
+    process.exit(1)
+  }
+}
+
+connectDB();
+
+app.listen(PORT, () => console.log(`Successufully connected to port: ${PORT}`))
+
 
 // mongoose.set('useFindAndModify', false);

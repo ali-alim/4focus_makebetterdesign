@@ -1,15 +1,15 @@
 import React from "react";
 import useStyles from "./styles";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
-// import { useState, useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../actions/posts";
 
-function Form() {
+function Form({currentId, setCurrentId}) {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId ): null)
   // const posts = useSelector((state) => state.posts);
   const [postData, setPostData] = useState({
     title: "",
@@ -19,9 +19,9 @@ function Form() {
     selectedFile: "",
   });
 
-  // useEffect(() => {
-  //   if (post) setPostData(post);
-  // }, [post]);
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -105,6 +105,7 @@ function Form() {
           color="primary"
           size="large"
           type="submit"
+          // onClick={handleSubmit}
           fullWidth
         >
           Submit

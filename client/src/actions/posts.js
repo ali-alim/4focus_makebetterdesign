@@ -20,3 +20,4 @@ export const createPost = (post) => async (dispatch) => {
     } catch(err) {console.log(err.message)}
 }
 
+f

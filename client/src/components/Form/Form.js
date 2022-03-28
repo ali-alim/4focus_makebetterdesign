@@ -4,7 +4,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
-import { createPost } from "../../actions/posts";
+import { updatePost, createPost } from "../../actions/posts";
 
 function Form({currentId, setCurrentId}) {
   const classes = useStyles();
@@ -27,9 +27,12 @@ function Form({currentId, setCurrentId}) {
     e.preventDefault();
     if(currentId) {
     dispatch(updatePost(currentId, postData));
+   
     } else {
       dispatch(createPost(postData));
+      
     }
+    clear();
   };
   const clear = () => {
     setCurrentId(null);

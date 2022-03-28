@@ -23,7 +23,7 @@ function App() {
         </AppBar>
         <Grow in>
             <Container >
-                <Grid className={classes.mainContainer} container justify='space-between' direction="column-reverse" alignItems='stretch' spacing={3}>
+                <Grid className={classes.mainContainer} container justify='space-between' alignItems='stretch' spacing={3}>
                     <Grid item xs={12} sm={7}>
                         <Posts />
                     </Grid>

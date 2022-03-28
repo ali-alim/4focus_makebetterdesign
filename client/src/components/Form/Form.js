@@ -25,9 +25,14 @@ function Form({currentId, setCurrentId}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
+    if(currentId) {
+    dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
   const clear = () => {
+    setCurrentId(null);
     setPostData({
       title: "",
       message: "",
@@ -45,7 +50,7 @@ function Form({currentId, setCurrentId}) {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a post</Typography>
+        <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a post</Typography>
         <TextField
           name="creator"
           variant="outlined"

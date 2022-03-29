@@ -11,11 +11,13 @@ import "./index.css"
 
 function App() {
     const classes = useStyles();
-    const [currentId, setCurrentId] = useState(null);
-    const dispatch = useDispatch()
+    const [currentId, setCurrentId] = useState(0);
+    const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getPosts())
     },[currentId, dispatch]);
+    
     return (
     <Container maxwidth="lg">
         <AppBar className={classes.appBar} position='static' color='inherit'>

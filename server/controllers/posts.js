@@ -55,3 +55,5 @@ export const deletePost = async (req, res) => {
 
   res.json({message: 'the post was deleted successfully'});
 }
+
+export default router;

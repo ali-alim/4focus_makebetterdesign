@@ -1,48 +1,34 @@
-import React from "react";
-import useStyles from "./styles";
+import React, {useState, useEffect} from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
-import { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePost, createPost } from "../../actions/posts";
+import useStyles from "./styles";
 
 function Form({currentId, setCurrentId}) {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId ): null)
-  // const posts = useSelector((state) => state.posts);
-  const [postData, setPostData] = useState({
-    title: "",
-    message: "",
-    creator: "",
-    tags: "",
-    selectedFile: "",
-  });
+  const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId ): null))
+  const [postData, setPostData] = useState({ title: "", message: "", creator: "", tags: "", selectedFile: "" });
 
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if(currentId) {
-    dispatch(updatePost(currentId, postData));
-   
-    } else {
+    if(currentId===0) {
       dispatch(createPost(postData));
-      
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));    
+      clear();
     }
-    clear();
   };
+
   const clear = () => {
-    setCurrentId(null);
-    setPostData({
-      title: "",
-      message: "",
-      creator: "",
-      tags: "",
-      selectedFile: "",
-    });
+    setCurrentId(0);
+    setPostData({ title: "", message: "", creator: "", tags: "", selectedFile: "" });
   };
 
   return (
@@ -53,7 +39,7 @@ function Form({currentId, setCurrentId}) {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a post</Typography>
+        <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Creating'} a post</Typography>
         <TextField
           name="creator"
           variant="outlined"
@@ -113,7 +99,6 @@ function Form({currentId, setCurrentId}) {
           color="primary"
           size="large"
           type="submit"
-          // onClick={handleSubmit}
           fullWidth
         >
           Submit
@@ -121,7 +106,7 @@ function Form({currentId, setCurrentId}) {
         <Button
           variant="contained"
           color="secondary"
-          size="large"
+          size="small"
           onClick={clear}
           fullWidth
         >

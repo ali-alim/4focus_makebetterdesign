@@ -1,5 +1,4 @@
 import React from 'react'
-import todo from "./images/todo.png"
 import useStyles from './styles' 
 import {Container, Grow, Grid} from "@material-ui/core"
 import Posts from './components/Posts/Posts'
@@ -8,6 +7,7 @@ import {useState, useEffect} from "react"
 import { useDispatch } from 'react-redux'
 import {getPosts} from "./actions/posts"
 import "./index.css"
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
     const classes = useStyles();
@@ -20,6 +20,7 @@ function App() {
     
     return (
     <Container maxwidth="lg">
+        <Navbar />
         <Grow in>
             <Container >
                 <Grid className={classes.mainContainer} container justifyContent='space-between' alignItems='stretch' spacing={3}>

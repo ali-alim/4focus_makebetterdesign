@@ -1,6 +1,7 @@
+import React from 'react';
 import {AppBar, Typography} from '@material-ui/core'
-import "./styles"
-
+import useStyles from "./styles"
+import todo from "../../images/todo.png"
 const Navbar = () => {
     const classes = useStyles();
   return (

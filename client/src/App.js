@@ -20,10 +20,6 @@ function App() {
     
     return (
     <Container maxwidth="lg">
-        <AppBar className={classes.appBar} position='static' color='inherit'>
-            <Typography className={classes.heading} variant="h6" align="center">THIS APP HELPS YOU TO</Typography>
-            <img className={classes.image} src={todo} alt="todo_cards" height="60" />
-        </AppBar>
         <Grow in>
             <Container >
                 <Grid className={classes.mainContainer} container justifyContent='space-between' alignItems='stretch' spacing={3}>

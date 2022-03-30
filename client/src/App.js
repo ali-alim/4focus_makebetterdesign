@@ -1,7 +1,7 @@
 import React from 'react'
 import todo from "./images/todo.png"
 import useStyles from './styles' 
-import {Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"
+import {Container, Grow, Grid} from "@material-ui/core"
 import Posts from './components/Posts/Posts'
 import Form from './components/Form/Form'
 import {useState, useEffect} from "react"

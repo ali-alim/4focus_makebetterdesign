@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {getPosts} from "../../actions/posts"
+import Form from "../Form/Form";
+import Posts from "../Posts/Posts";
+import {Container, Grow, Grid} from "@material-ui/core"
 
 function Home() {
+    const [currentId, setCurrentId] = useState(0);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getPosts())
+    }, [currentId,dispatch]);
+
   return (
     <Grow in>
       <Container>
         <Grid
-          className={classes.mainContainer}
           container
           justifyContent="space-between"
           alignItems="stretch"

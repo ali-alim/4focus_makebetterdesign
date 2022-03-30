@@ -1,30 +1,21 @@
-import React from 'react'
-import {BrowserRouter,  Switch, Route } from "react-router-dom"
-import useStyles from './styles' 
-import {Container, Grow, Grid} from "@material-ui/core"
-import Posts from './components/Posts/Posts'
-import Form from './components/Form/Form'
-import {useState, useEffect} from "react"
-import { useDispatch } from 'react-redux'
-import {getPosts} from "./actions/posts"
-import "./index.css"
-import Navbar from './components/Navbar/Navbar'
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Container } from "@material-ui/core";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
 
 function App() {
-    const classes = useStyles();
-    const [currentId, setCurrentId] = useState(0);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getPosts())
-    },[currentId, dispatch]);
-    
-    return (
-    <Container maxwidth="lg">
+  return (
+    <BrowserRouter>
+      <Container maxwidth="lg">
         <Navbar />
-        <Home />
-    </Container>
-    )
+     <Switch>
+         <Route path="/" exact component={Home} />
+         {/* <Route path="/auth" exact component={Auth} /> */}
+     </Switch>
+      </Container>
+    </BrowserRouter>
+  );
 }
 
 export default App;
